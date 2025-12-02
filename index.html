@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currículum</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: 'Orbitron', sans-serif;
+            color: white;
+            font-weight: bold;
+            line-height: 1.6rem;
+        }
+        body{
+            min-height: 100vh;
+            background: radial-gradient(circle at top, rgb(1, 85, 116), rgb(1, 1, 50));
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        main{
+            display: flex;
+            padding: 15px;
+            width: 700px;
+            height: 930px;
+            box-shadow: 0 0 18px #009dff80, 0 0 4px #00d9ff;
+            border: 1px solid #00d9ff40;
+            border-radius: 10px;
+            animation: animacion-main 1.4s linear;
+            overflow: hidden;
+        }
+        @keyframes animacion-main{
+            from{
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to{
+                opacity: 1;
+                transform: translate(1.1);
+            }
+        }
+        #izquierda{
+            margin-top: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 20px;
+            width: 50%;
+            height: 100%;
+        }
+        #titulos{
+            color: #00d9ff;
+            text-shadow: 2px 2px 10px #00d9ff;
+            font-weight: bold;
+        }
+        #imagen-principal img{
+            width: 170px;
+            height: 170px;
+            border: 5px inset #00d9ff;
+            border-radius: 50%;
+            box-shadow: 0 0 20px #00d9ff;
+            object-fit: cover;
+            margin-right: 50px;
+            animation: animacion-imagen 2s linear infinite;
+        }
+        @keyframes animacion-imagen {
+            0% {
+                box-shadow: 0 0 5px #00d9ff;
+            }
+            50% {
+                box-shadow: 0 0 25px #00d9ff;
+            }
+            100% {
+                box-shadow: 0 0 5px #00d9ff;
+            }
+        }
+        #imagenes{
+            width: 40px;
+            height: 40px;
+        }
+        #contactos{
+            border: 2px dashed #00d9ff;
+            border-radius: 20px;
+            padding: 17px;
+        }
+        a{
+            text-decoration: none;
+        }
+        #contenedor-imagenes{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+        #contenedor-imagenes:hover{
+            transform: translateX(20px);
+            transition: 0.5s linear all;
+        }
+        #idiomas{
+            padding: 10px;
+            background-color: rgb(1, 42, 58);
+            border-radius: 10px; border: 2px dashed white;
+        }
+        #idiomas,#contactos{
+            transition: transform 420ms cubic-bezier(.2,.9,.2,1);
+            transform-origin: center; 
+            transform-style: preserve-3d;
+            cursor: pointer;
+        }
+        #idiomas:hover,#contactos:hover{
+            transform: perspective(600px) rotateX(20deg) translateZ(20px)
+        }
+        #derecha{
+            margin: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            gap: 15px;
+        }
+        #habilidades{
+            text-align: justify;
+            text-align-last: center;
+        }
+        #experiencia{
+            padding: 10px;
+            border: 2px dashed white; border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <article id="izquierda">
+            <h2 id="titulos">Desarrollador de aplicaciones web</h2>
+
+            <div id="imagen-principal">
+                <img src="imagenes/imagen.png" alt="Imagen de perfil">
+            </div>
+
+            <div id="contactos">
+                <p id="correo">Email: zakariakebour@gmail.com</p>
+
+                <div id="contenedor-imagenes">
+                    <img src="imagenes/telefono.png" alt="Teléfono" id="imagenes">
+                    <p>Tel: 602826497</p>
+                </div>
+
+                <div id="contenedor-imagenes">
+                    <img src="imagenes/linkedin.png" alt="LinkedIn" id="imagenes">
+                    <a href="https://www.linkedin.com/in/zakaria-kebour/">LinkedIn: www.linkedin.com/in/zakaria-kebour</a>
+                </div>
+                <div id="contenedor-imagenes">
+                    <img src="imagenes/github.png" alt="GitHub" id="imagenes">
+                    <a href="https://github.com/zakariakebour-arch">GitHub: github.com/zakariakebour-arch</a>
+                </div>
+                </div>
+            </div>
+            <div id="idiomas">
+                <h3>Idiomas:</h3>
+                <p>Español</p>
+                <p>Árabe — Nativo</p>
+                <p>Francés — Nivel intermedio</p>
+                <p>Inglés — Nivel básico-intermedio</p>
+            </div>
+        </article>
+        <article id="derecha">
+            <section id="habilidades">
+                <h3 id="titulos">HABILIDADES:</h3>
+                <div id="contenedor-imagenes">
+                    <img src="imagenes/python.png" alt="Python" id="imagenes">
+                    <p>
+                        Buen manejo del lenguaje Python para desarrollo web, utilizando frameworks como Flask para la creación de APIs REST. 
+                        También tengo interés en aprender el framework Django. Buen nivel en Programación Orientada a Objetos (POO), dominando casi todos los conceptos.
+                    </p>
+                </div>
+
+                <div id="contenedor-imagenes">
+                    <img src="imagenes/javascript.png" alt="JavaScript" id="imagenes">
+                    <p>
+                        Buen manejo del DOM y experiencia enviando y recibiendo peticiones con fetch. 
+                        Interesado en dominar aún más el lenguaje y aprender frameworks de frontend y backend a muy buen nivel.
+                    </p>
+                </div>
+                <div id="contenedor-imagenes">
+                    <img src="imagenes/java.png" alt="java" id="imagenes">
+                    <p>Buen manejo del lenguaje Java, con sólidos conocimientos en POO, estructuras de datos y desarrollo de aplicaciones, tanto de consola como orientadas a backend. Familiarizado con buenas prácticas y patrones básicos de diseño.</p>
+                </div>
+                <div id="contenedor-imagenes">
+                    <img src="imagenes/php.png" alt="PHP" id="imagenes">
+                    <p>Buen conocimiento en PHP incluyendo POO y conexión con MySQL</p>
+                </div>
+            </section>
+            <section id="experiencia">
+                <h3>Experiencia laboral:</h3>
+                <h4>Empresa: APP Paterna</h4>
+                <p>Asistencia a clientes y reparación de equipos informáticos y montaje de ordenadores</p>
+            </section>
+            <section id="educacion">
+                <h3>Educación:</h3>
+                <p>IES Serpis Grado medio SMR - 2023-2025</p>
+                <p>CEAC FP Grado superior de desarrollo de aplicaciones web - 2025-2027</p>
+            </section>
+        </article>
+    </main>
+</body>
+</html>
