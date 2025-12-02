@@ -20,6 +20,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            padding: 20px;
         }
         main{
             display: flex;
@@ -68,15 +69,9 @@
             animation: animacion-imagen 2s linear infinite;
         }
         @keyframes animacion-imagen {
-            0% {
-                box-shadow: 0 0 5px #00d9ff;
-            }
-            50% {
-                box-shadow: 0 0 25px #00d9ff;
-            }
-            100% {
-                box-shadow: 0 0 5px #00d9ff;
-            }
+            0% { box-shadow: 0 0 5px #00d9ff; }
+            50% { box-shadow: 0 0 25px #00d9ff; }
+            100% { box-shadow: 0 0 5px #00d9ff; }
         }
         #imagenes{
             width: 40px;
@@ -105,11 +100,12 @@
         #idiomas{
             padding: 10px;
             background-color: rgb(1, 42, 58);
-            border-radius: 10px; border: 2px dashed white;
+            border-radius: 10px;
+            border: 2px dashed white;
         }
         #idiomas,#contactos{
             transition: transform 420ms cubic-bezier(.2,.9,.2,1);
-            transform-origin: center; 
+            transform-origin: center;
             transform-style: preserve-3d;
             cursor: pointer;
         }
@@ -130,7 +126,35 @@
         }
         #experiencia{
             padding: 10px;
-            border: 2px dashed white; border-radius: 10px;
+            border: 2px dashed white;
+            border-radius: 10px;
+        }
+        @media (max-width: 900px){
+            main{
+                width: 95%;
+                height: auto;
+                flex-direction: column;
+            }
+            #izquierda, #derecha{
+                width: 100%;
+                align-items: center;
+            }
+            #derecha{
+                margin: 0;
+                padding: 10px;
+            }
+            #imagen-principal img{
+                margin-right: 0;
+            }
+        }
+        @media (max-width: 500px){
+            #contenedor-imagenes{
+                flex-direction: column;
+                text-align: center;
+            }
+            main{
+                padding: 10px;
+            }
         }
     </style>
 </head>
@@ -158,7 +182,6 @@
                 <div id="contenedor-imagenes">
                     <img src="imagenes/github.png" alt="GitHub" id="imagenes">
                     <a href="https://github.com/zakariakebour-arch">GitHub: github.com/zakariakebour-arch</a>
-                </div>
                 </div>
             </div>
             <div id="idiomas">
